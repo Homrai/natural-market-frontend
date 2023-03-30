@@ -52,6 +52,7 @@ const Login = () => {
             return
         }
         const { token, refreshToken, expiresIn } = res;
+        console.log(refreshToken);
         cookies.set("refreshToken",refreshToken,{
             httpOnly:true,
             Secure: true,
