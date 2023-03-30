@@ -58,7 +58,6 @@ export const refreshPagina = async (refreshToken)=>{
         const datos = await fetch(dominio+`/${refreshToken}`, {
             method: 'GET',
             headers: {
-                'Authorization': refreshToken,
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Credentials': "true",
             },

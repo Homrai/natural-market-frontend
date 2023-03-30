@@ -31,7 +31,7 @@ const App = () => {
   };
   const refrescarDatos= async ()=>{
     const refreshToken=cookies.get("refreshToken", {doNotParse:true})
-    console.log(refreshToken);
+    if(refreshToken===undefined) return;
     const datos = await refreshPagina(refreshToken);
     const {token, uid} = datos;
     const usuario = await cargarDatosRefresh(token,uid);
