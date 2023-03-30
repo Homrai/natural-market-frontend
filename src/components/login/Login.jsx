@@ -52,12 +52,12 @@ const Login = () => {
             return
         }
         const { token, refreshToken, expiresIn } = res;
-        console.log(refreshToken);
-        cookies.set("refreshToken",refreshToken,{
+
+        cookies.set("refreshToken","asdasd",{
             path:"/",
             httpOnly:true,
             Secure: true,
-            //expires: new Date(Date.now()+expiresIn*1000),
+            expires: new Date(Date.now()+expiresIn*1000),
             
         })
         toast.success("Login con exito", {
