@@ -55,7 +55,7 @@ const Login = () => {
 
         cookies.set("refreshToken",refreshToken,{
             path:"/",
-            httpOnly:true,
+            //httpOnly:true,
             //secure:true,
         })
         toast.success("Login con exito", {
