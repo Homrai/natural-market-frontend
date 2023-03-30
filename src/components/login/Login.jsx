@@ -6,7 +6,9 @@ import { sani, validacionLogin } from '../../utils/validaciones';
 import { useDispatch } from "react-redux";
 import { addUser } from '../../features/userSlice';
 import { perfil } from '../../api/user.direcciones';
+import Cookies from 'universal-cookie';
 const Login = () => {
+    const cookies = new Cookies();
     const dispatch = useDispatch();
     const loginInicial = {
         email: "admin123456@gmail.com",
@@ -49,7 +51,13 @@ const Login = () => {
             setLoading(true);
             return
         }
-        const { token } = res;
+        const { token, refreshToken, expiresIn } = res;
+        cookies.set("refreshToken",refreshToken,{
+            httpOnly:true,
+            Secure: true,
+            expires: new Date(Date.now()+expiresIn*1000),
+            path:"/",
+        })
         toast.success("Login con exito", {
             duration: 4000,
         });

@@ -39,7 +39,7 @@ const App = () => {
   useEffect(() => {
     traerProductos();
     refrescarDatos();
-    cookies.set("refreshToken","token",{path:"/"})
+    //cookies.set("refreshToken","token",{path:"/"})
     // eslint-disable-next-line
   },[])
   
