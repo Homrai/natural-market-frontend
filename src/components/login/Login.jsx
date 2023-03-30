@@ -51,13 +51,9 @@ const Login = () => {
             setLoading(true);
             return
         }
-        const { token, refreshToken, expiresIn } = res;
+        const { token } = res;
 
-        cookies.set("refreshToken",refreshToken,{
-            path:"/",
-            //httpOnly:true,
-            //secure:true,
-        })
+        //cookies.set("refreshToken",refreshToken,{path:"/"})
         toast.success("Login con exito", {
             duration: 4000,
         });
