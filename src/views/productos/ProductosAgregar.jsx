@@ -13,10 +13,10 @@ const ProductosAgregar = () => {
     const dispatch =useDispatch();
 
     const initialStateProducto = {
-        nombre: "papa",
-        precio: "200",
-        cantidad: "50",
-        descripcion: "pastusa",
+        nombre: "",
+        precio: "",
+        cantidad: "",
+        descripcion: "",
     };
     const [producto, setProducto] = useState(initialStateProducto);
     const [images, setImages] = useState([]);
