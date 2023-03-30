@@ -11,7 +11,7 @@ export const obtenerProductos= async (token, metodo, dir, registroDatos)=>{
                 'Access-Control-Allow-Credentials': "true",
             },
             credentials: "include",
-            mode: 'cors', // no-cors, *cors, same-origin
+            mode: 'no-cors', // no-cors, *cors, same-origin
             body: JSON.stringify(registroDatos),
         });
         const res = await datos.json();
