@@ -30,7 +30,8 @@ const App = () => {
     dispatch(addproductos(productos))
   };
   const refrescarDatos= async ()=>{
-    const datos = await refreshPagina();
+    const refreshToken=cookies.get("refreshToken", {doNotParse:true})
+    const datos = await refreshPagina(refreshToken);
     const {token, uid} = datos;
     const usuario = await cargarDatosRefresh(token,uid);
     if (!usuario.nombre) return

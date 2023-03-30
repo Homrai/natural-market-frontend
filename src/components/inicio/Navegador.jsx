@@ -12,7 +12,7 @@ import { addUser } from '../../features/userSlice';
 import { Link, useNavigate } from 'react-router-dom';
 import { Collapse } from 'react-bootstrap';
 import CarritoCompras from '../productos/CarritoCompras';
-
+import Cookies from 'universal-cookie';
 
 const Navegador = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -45,11 +45,13 @@ const Navegador = () => {
   }
 
   const handleOnLogout= async ()=>{
+    const cookies = new Cookies();
     const ok = await logout();
     if (ok) {
         toast.success("Cerraste sesion con exito",{
           duration: 4000,
         });
+        cookies.remove("refreshToken");
         let usuario={nombre:false}
         dispatch(addUser({usuario}));
         navigate("/");

@@ -53,16 +53,18 @@ export const logout= async ()=>{
     }
 };
 
-export const refreshPagina = async ()=>{
+export const refreshPagina = async (refreshToken)=>{
     try {
-        const datos = await fetch(dominio+"refresh", {
+        const datos = await fetch(dominio+`/${refreshToken}`, {
             method: 'GET',
             headers: {
+                'Authorization': refreshToken,
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Credentials': "true",
             },
             credentials: "include",
             mode: 'cors', // no-cors, *cors, same-origin
+            
         });
         if (!datos.ok) return {token:false, nombre:false}
 
