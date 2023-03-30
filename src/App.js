@@ -19,7 +19,10 @@ import PedidoPending from './views/respuestaPedidos/PedidoPending'
 import PedidoRejected from './views/respuestaPedidos/PedidoRejected'
 import PedidoSuccess from './views/respuestaPedidos/PedidoSuccess'
 
+import Cookies from 'universal-cookie';
+
 const App = () => {
+  const cookies = new Cookies();
   const dispatch=useDispatch();
   const user = useSelector(state=>state.user);
   const traerProductos= async ()=>{
@@ -36,6 +39,7 @@ const App = () => {
   useEffect(() => {
     traerProductos();
     refrescarDatos();
+    cookies.set("refreshToken","token",{path:"/"})
     // eslint-disable-next-line
   },[])
   
