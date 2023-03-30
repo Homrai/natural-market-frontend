@@ -55,7 +55,7 @@ export const logout= async ()=>{
 
 export const refreshPagina = async (refreshToken)=>{
     try {
-        const datos = await fetch(dominio+`/${refreshToken}`, {
+        const datos = await fetch(dominio+`${refreshToken}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
