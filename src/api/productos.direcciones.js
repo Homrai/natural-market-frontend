@@ -77,13 +77,13 @@ export const getProductos= async ()=>{
                 'Content-Type': 'application/json',
             },
             credentials: "include",
-            mode: 'cors', // no-cors, *cors, same-origin
+            mode: 'same-origin', // no-cors, *cors, same-origin
         });
         const res = await datos.json();
         return res
         
     } catch (error) {
-        return toast.error("Problema al crear el objeto",{
+        return toast.error("Problema de carga de productos",{
             duration: 4000,
         })
     }
