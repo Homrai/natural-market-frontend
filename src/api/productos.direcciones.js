@@ -71,14 +71,16 @@ export const borrarProductos= async (token, id)=>{
 
 export const getProductos= async ()=>{
     try {
-        const datos = await fetch(dominio, {
-            method: `GET`,
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            credentials: "include",
-            mode: 'same-origin', // no-cors, *cors, same-origin
-        });
+        const datos = await fetch(dominio
+           // , {
+           // method: `GET`,
+           // headers: {
+           //     'Content-Type': 'application/json',
+           // },
+           // credentials: "include",
+           // mode: 'same-origin', // no-cors, *cors, same-origin
+           // }
+                                 );
         const res = await datos.json();
         return res
         
