@@ -1,4 +1,4 @@
-const dominio = "https://natural-market.onrender.com/pedido/";
+const dominio = "https://natural-market-homrai.vercel.app/pedido/";
 export const pedidos= async (token, metodo, dir, registroDatos)=>{
     try {
         const datos = 
