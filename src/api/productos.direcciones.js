@@ -1,6 +1,6 @@
 import { toast } from "react-hot-toast";
 
-const dominio = "https://natural-market.onrender.com/product/";
+const dominio = "https://natural-market-homrai.vercel.app/product/";
 export const obtenerProductos= async (token, metodo, dir, registroDatos)=>{
     try {
         const datos = await fetch(dominio+dir, {
