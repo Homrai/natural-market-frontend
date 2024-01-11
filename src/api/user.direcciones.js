@@ -1,4 +1,4 @@
-const dominio = "https://natural-market.onrender.com/user/";
+const dominio = "https://natural-market-homrai.vercel.app/user/";
 export const perfil= async (token, metodo, dir, registroDatos)=>{
     try {
         const datos = await fetch(dominio+dir, {
